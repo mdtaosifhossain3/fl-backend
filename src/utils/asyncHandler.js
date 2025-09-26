@@ -1,6 +1,6 @@
 //Higher Order function. A function that received function as a pharameter also call it. ex: const fo = (fn)=> ()=> {}
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
 };
